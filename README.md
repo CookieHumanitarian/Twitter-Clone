@@ -62,4 +62,19 @@ Future Improvements
 2. Improve the mobile responsiveness of the UI.
 
 **Images of the Website**
+Main page
+![Main page](./images/mainPage.png)
+
+Register
+![Rsgister page](./images/registerPage.png)
+
+Login 
+![Login page](./images/login.png)
+
+User page
+![User page](./images/userPage.png)
+
+Edit function
 ![Edit functionality](./images/editFunction.png)
+
+
