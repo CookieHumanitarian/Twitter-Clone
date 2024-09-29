@@ -5,7 +5,7 @@ Network Web Application
 **Overview**
 This is a social media web application built using Django, JavaScript, and HTML/CSS. It offers features similar to popular social platforms, where users can create accounts, log in, and interact with each other's posts. Users can like, edit, and delete their own posts, follow other users, and view the posts of people they follow. Pagination is implemented to efficiently display large numbers of posts. The application prioritizes user authentication to manage access to key features like posting and following/unfollowing other users.
 
-Note: My full history of commits can be seen at my other repository: CS50 WEB Progress
+Note: My full history of commits can be seen at my other repository: CS50 WEB Progress Project 4
 
 **Features**
 1. User Registration and Authentication
