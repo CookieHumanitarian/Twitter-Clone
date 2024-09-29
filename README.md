@@ -57,9 +57,11 @@ python manage.py migrate
 4. Start the development server:
 python manage.py runserver
 
-Future Improvements
+
+**Future Improvements**
 1. Implement real-time updates using WebSockets.
 2. Improve the mobile responsiveness of the UI.
+
 
 **Images of the Website**
 
