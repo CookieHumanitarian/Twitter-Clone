@@ -69,7 +69,7 @@ Register
 ![Rsgister page](./images/registerPage.png)
 
 Login 
-![Login page](./images/login.png)
+![Login page](./images/loginPage.png)
 
 User page
 ![User page](./images/userPage.png)
