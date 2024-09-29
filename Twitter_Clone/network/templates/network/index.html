@@ -1,0 +1,83 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <div class="submit">
+    {% if user.is_authenticated %}
+    <h3>New Post</h3>
+    <form id="postForm" onsubmit="setTimeout(function(){window.location.reload();},10);">
+        <textarea class="form" required id="postBody" placeholder="Body"></textarea>
+        <input type="submit" class="btn btn-primary"/>
+    </form>
+    {% endif %}
+    </div>
+
+    <div id="posts">
+        
+    {% for post in page_obj %}
+    <div class="post" data-id="{{ post.id }}">
+        <a class="userProfile" href="{% url 'profileView' post.user %}">{{ post.user }}</a>
+        
+        <div class="postBody">{{ post.body }}</div>
+
+        <div class="likeCount">
+            <div id="like">Likes: {{post.likeCount}}</div>
+            {% if user.is_authenticated %}
+                <button id="likeText" class="likeButton" data-id="{{ post.id }}">
+                    {% if post.id in liked_posts %}
+                        Unlike
+                    {% else %}
+                        Like
+                    {% endif %}
+                </button>
+            {% endif %}
+        </div>
+
+        {% if post.edited %}
+            <div id="edit">Edited</div>
+        {% endif %}
+        
+        <div class="postEdit" style="display:none">
+            <form class="editForm">
+                <textarea class="form-control formBody">{{post.body}}</textarea>
+                <input type="hidden" name="post_id" value="{{post.id}}"/>
+                <input type="submit" class="btn btn-primary" value="Submit"/>
+            </form>
+        </div>
+        
+        <div>{{ post.timestamp }}</div>
+
+        {% if user.is_authenticated %}
+            {% if currentUser.username == post.user.username %}
+                <button class="editButton" data-id="{{ post.id }}">Edit</button>
+            {% endif %}
+        {% endif %}
+    </div>
+{% endfor %}
+
+    </div>
+
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+    
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+    
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+
+
+{% block script %}
+    <script src="{% static 'network/network.js' %}"></script>
+{% endblock %}
+
+{% endblock %}
