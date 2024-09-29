@@ -60,3 +60,6 @@ python manage.py runserver
 Future Improvements
 1. Implement real-time updates using WebSockets.
 2. Improve the mobile responsiveness of the UI.
+
+**Images of the Website**
+
