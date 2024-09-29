@@ -62,4 +62,4 @@ Future Improvements
 2. Improve the mobile responsiveness of the UI.
 
 **Images of the Website**
-
+![Alt text](./images/editFunctino.png)
