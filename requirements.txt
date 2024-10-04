@@ -15,6 +15,7 @@ lib50==3.0.10
 packaging==23.2
 pexpect==4.9.0
 platformdirs==4.2.2
+psycopg2-binary==2.9.9
 ptyprocess==0.7.0
 pycparser==2.21
 PyYAML==6.0.1
