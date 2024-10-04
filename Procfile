@@ -1,1 +1,1 @@
-web : gunicorn project4.wsgi
+web: gunicorn Twitter_Clone.wsgi
